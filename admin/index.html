@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel - Thais Barboza Nutricionista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login-screen" class="login-screen">
+    <div class="login-box">
+        <div class="login-logo">
+            <span class="logo-text">Thais <em>Barboza</em></span>
+            <span class="logo-sub">PAINEL DE GESTÃO</span>
+        </div>
+        <form id="login-form">
+            <div class="form-field">
+                <label>Senha</label>
+                <input type="password" id="login-password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-sign-in-alt"></i> Entrar
+            </button>
+            <p id="login-error" class="login-error"></p>
+            <p class="login-hint">Senha padrão: <strong>nutri2026</strong><br>Altere em Configurações após o primeiro login.</p>
+        </form>
+    </div>
+</div>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app" class="app hidden">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="logo-text">Thais <em>Barboza</em></span>
+            <span class="logo-sub">GESTÃO</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-view="dashboard"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#agenda" class="nav-item" data-view="agenda"><i class="fas fa-calendar-alt"></i> Agenda</a>
+            <a href="#pacientes" class="nav-item" data-view="pacientes"><i class="fas fa-user-friends"></i> Pacientes</a>
+            <a href="#financeiro" class="nav-item" data-view="financeiro"><i class="fas fa-wallet"></i> Financeiro</a>
+            <a href="#relatorios" class="nav-item" data-view="relatorios"><i class="fas fa-chart-line"></i> Relatórios</a>
+            <a href="#config" class="nav-item" data-view="config"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="logout-btn" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+            <h1 id="view-title">Dashboard</h1>
+            <div class="topbar-actions">
+                <span class="today-date" id="today-date"></span>
+                <div class="user-chip">
+                    <div class="avatar">TB</div>
+                    <span id="user-name">Thais Barboza</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="view-container" id="view-container"><!-- rendered by JS --></div>
+    </main>
+</div>
+
+<!-- ============ MODAL ROOT ============ -->
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
